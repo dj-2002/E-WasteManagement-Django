@@ -1,0 +1,119 @@
+
+{% load static %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a href="{% url 'myapp:showWishlist' %}"><i class="fa fa-heart"></i> Wishlist</a></li>
+                            <li><a href="{% url 'myapp:cart'%}"><i class="fa fa-user"></i> My Cart</a></li>
+                            <li><a href="{% url 'myapp:checkout' %}"><i class="fa fa-user"></i> Checkout</a></li>
+                            {%if user.is_authenticated %}
+                            <li><a href="{%url 'myapp:signin'%}"><i class="fa fa-user"></i>Hello, {{user.username}}</a></li>
+                            <li><a href="{%url 'myapp:signout'%}"><i class="fa fa-user"></i>Logout</a></li>
+                            {%else%}
+                            <li><a href="{%url 'myapp:signup'%}"><i class="fa fa-user"></i> Signup</a></li>
+                            <li><a href="{%url 'myapp:signin'%}"><i class="fa fa-user"></i> Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">USD</a></li>
+                                    <li><a href="#">INR</a></li>
+                                    <li><a href="#">GBP</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">French</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End header area -->
+    
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="{% url 'myapp:cart' %}"><img src="{% static 'img/logo.png' %}"></a></h1>
+                    </div>
+-                </div>
+                
+                
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="{% url 'myapp:cart' %}">Cart - <span class="cart-amunt">{{request.session.total}}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+    
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div> 
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{% url 'myapp:index' %}">Home</a></li>
+                        <li><a href="{% url 'myapp:shop' 'brand' 'Samsung'%}">Shop page</a></li>
+                        <li><a href="{% url 'myapp:single-product' '1111' "Computer & Accessrioes" %}">Single product</a></li>
+                        <li><a href="{% url 'myapp:cart' %}">Cart</a></li>
+                        <li><a href="{% url 'myapp:checkout' %}">Checkout</a></li>
+                        <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">Catageory</span><span class="value"></span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="cat" href="{% url 'myapp:shop' 'catageory' 'Computer & Accessiories'%}">Computer & Accessrioes</a></li>
+                                    <li><a class="cat" href="{% url 'myapp:shop' 'catageory' 'Home & Kitchen'%}">Home & Kitchen</a></li>
+                                    <li><a class="cat" href="{% url 'myapp:shop' 'catageory' 'Music & Camera'%}">Music & Camera</a></li>
+                                </ul>
+                        </li>
+                        <li><a href="#">Contact</a></li>
+                        <li>
+                          <div class="" style="float:right; position:relative;">
+                        <form class="form-inline " action="{% url 'myapp:foo-search' %}" method="POST">
+                        {% csrf_token %}
+                        <input class="form-control" name="name" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success " type="submit" >Search</button>
+                        </form>
+                        </div>          
+                        </li>    
+
+                    </ul>
+                                        
+                </div>  
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+
+
+    
