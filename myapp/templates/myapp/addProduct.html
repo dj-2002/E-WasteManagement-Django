@@ -1,0 +1,72 @@
+
+
+{% extends 'base.html'%}
+
+    
+{% block content %}
+
+
+<form method="post" action="{% url 'myapp:addProduct' %}" enctype="multipart/form-data">
+{% csrf_token %}
+<div class="form-group" style="margin:20px">
+<label>ID</label>
+<input type="text" name='product_id'><br><br>
+ <label>Product Name</label>
+<input type="text" name='name'><br><br>
+<label>brand</label>
+<input type="text" name='brand'><br><br>
+<label>Price</label>
+<input type="number" name='price'><br><br>
+<label>Description</label>
+<input type="text" name='description' style="width:100%"><br><br>
+<label>Long Description</label>
+<input type="textarea" name='longDescription' style="width:100%; height:30%" ><br><br>
+<label>categeory</label>
+
+<select name="catageory" id="maincat">
+<option selected >Select catageory</option>
+<option value="Computer & Accessiories">Computer & Accessiories</option>
+<option value="mobile Accessiories">Computer & Accessiories</option>
+<option value="Kitchen & Home Appliances">Kitchen & Home Appliances</option>
+<option value="Audio">Audio</option>
+<option value="Gaming">Gaming</option>
+<option value="Storage">Storage</option>
+<option value="Tv Audio & cameras">Tv Audio & cameras</option>
+<option value="Heating & cooling Appliances">Heating & cooling Appliances</option>
+<option value="Smartphone">Smartphone</option>
+</select>
+
+
+<div id="subcat1" class="s">
+<label>sub_catageory</label>
+<select name="subCatageory" >
+<option value="SSD">SSD</option>
+<option value="HDD">HDD</option>
+<option value="RAM">RAM</option>
+<option value="Air conditioner">Air conditioner</option>
+<option value="Washing machine">Washing machine</option>
+<option value="Others">Others</option>
+</select>
+</div>
+
+
+<br>
+<label>Quentity</label>
+<input type="number" name='quentity'><br><br>
+<label>image</label>
+<input type="file" name='image'><br><br>
+<input type="submit" value="Add product">
+
+
+</div>
+</form>
+
+
+
+{%block jquery %}
+ 
+
+</script>
+
+{%endblock%}
+{%endblock content%}

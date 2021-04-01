@@ -142,13 +142,28 @@ z-index: 999;}
 
 
 .mainmenu-area ul.navbar-nav li a {
+<<<<<<< HEAD
     color: #6e6a6a;
+=======
+    color: black;
+>>>>>>> 6398115 (yes)
     font-size: 14px;
     padding: 20px;
 }
 
+<<<<<<< HEAD
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #5a88ca; color:#FFF;}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
+=======
+a.cat:hover{
+    color:green !important;
+}
+
+.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background:white; color:#000;}
+.mainmenu-area .nav > li > a:focus {color: blue;}
+
+
+>>>>>>> 6398115 (yes)
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
 /*-------------------------
@@ -546,6 +561,7 @@ z-index: 999;}
 }
 .product-widget-area .zigzag-bottom{background: #f4f4f4;}
 .footer-top-area .zigzag-bottom{background: #f4f4f4}
+<<<<<<< HEAD
 .footer-top-area {background: none repeat scroll 0 0 #333;
 color: #999;
 padding: 35px 0 180px;}
@@ -554,11 +570,25 @@ padding: 35px 0 180px;}
 .footer-bottom-area {background: #000;color: #fff}
 .footer-about-us span {
   color: #5a88ca;
+=======
+.footer-top-area {background: none repeat scroll 0 0 green;
+color: black;
+padding: 35px 0 180px;}
+
+
+.footer-bottom-area {background: rgb(70, 194, 59);color: #fff}
+.footer-about-us span {
+  color: black;
+>>>>>>> 6398115 (yes)
 }
 .footer-wid-title {
   font-family: raleway;
   font-size: 30px;
+<<<<<<< HEAD
   font-weight: 100;color: #fff
+=======
+  font-weight: 100;color:black
+>>>>>>> 6398115 (yes)
 }
 
 .footer-about-us h2 {
@@ -570,12 +600,20 @@ padding: 35px 0 180px;}
     padding: 0;
 }
 .footer-menu ul li {
+<<<<<<< HEAD
     border-bottom: 1px dashed #555;
+=======
+    border-bottom: 1px dashed black;
+>>>>>>> 6398115 (yes)
     padding: 5px 0;
 }
 .footer-menu a {
     display: block;
+<<<<<<< HEAD
     padding: 5px 0;color: #999
+=======
+    padding: 5px 0;color:black
+>>>>>>> 6398115 (yes)
 }
 
 
